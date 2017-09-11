@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sizígia.Plugins", "Sizígia.Plugins.csproj", "{70BE85E9-3175-3173-2B5C-93740FC5D239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sizígia", "Sizígia.csproj", "{CDCA9BEA-4685-A1F3-4C2A-DFA662EF0247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sizígia.Editor.Plugins", "Sizígia.Editor.Plugins.csproj", "{76399775-6157-87E2-B00A-BC6FFFFA55DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70BE85E9-3175-3173-2B5C-93740FC5D239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BE85E9-3175-3173-2B5C-93740FC5D239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BE85E9-3175-3173-2B5C-93740FC5D239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BE85E9-3175-3173-2B5C-93740FC5D239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCA9BEA-4685-A1F3-4C2A-DFA662EF0247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCA9BEA-4685-A1F3-4C2A-DFA662EF0247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCA9BEA-4685-A1F3-4C2A-DFA662EF0247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCA9BEA-4685-A1F3-4C2A-DFA662EF0247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76399775-6157-87E2-B00A-BC6FFFFA55DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76399775-6157-87E2-B00A-BC6FFFFA55DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76399775-6157-87E2-B00A-BC6FFFFA55DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76399775-6157-87E2-B00A-BC6FFFFA55DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
