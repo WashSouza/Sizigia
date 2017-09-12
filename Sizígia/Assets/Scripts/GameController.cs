@@ -10,21 +10,30 @@ public class GameController : MonoBehaviour {
 
     private Material skyboxCurrent;
 
+    public bool playerHitMirror;
+
+    public GameObject hittedMirror;
+
+    private GameObject InstText;
+
     // Use this for initialization
     void Start () {
+        
+        playerHitMirror = false;
+
+        InstText = GameObject.Find("Canvas").transform.Find("MirrorText").gameObject;
+
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        print(RenderSettings.skybox);
+        print(Globals.currentDimension);
 
-        if (Globals.currentDimension == "Normal")
-            skyboxCurrent = skyboxNormal;
+        if (playerHitMirror)
+            InstText.SetActive(true);
         else
-            skyboxCurrent = skyboxReflection;
-
-
-        RenderSettings.skybox = skyboxCurrent;
+            InstText.SetActive(false);
+               
     }
 }

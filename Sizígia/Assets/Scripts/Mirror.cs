@@ -4,34 +4,28 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour {
 
-    public Transform destination;
+    public  GameObject destination;
     private GameObject player;
+    
+    private GameObject gc;
 
-    private bool playerColliding;
-
-    private GameObject InstText;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = GameObject.Find("Player");
-        InstText = GameObject.Find("Canvas").transform.Find("MirrorText").gameObject;
-
-        playerColliding = false;
-
+        
+        gc = GameObject.Find("GameController");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (playerColliding)
-            InstText.SetActive(true);
-        else
-            InstText.SetActive(false);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (playerColliding)
+            if (gc.GetComponent<GameController>().playerHitMirror && gc.GetComponent<GameController>().hittedMirror == this.gameObject)
             {
-                player.transform.position = destination.position;
+                
+                player.transform.position = destination.transform.position;
+
                 ChangeDimension();
             }
         }
@@ -39,24 +33,42 @@ public class Mirror : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject == player)
-            playerColliding = true;
+        if (collision.gameObject == player)
+        {
+            gc.GetComponent<GameController>().playerHitMirror = true;
+            gc.GetComponent<GameController>().hittedMirror = this.gameObject;
+        }
         else
-            playerColliding = false;
+        {
+            gc.GetComponent<GameController>().playerHitMirror = false;
+            gc.GetComponent<GameController>().hittedMirror = null;
+        }
         
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        playerColliding = false;
+        gc.GetComponent<GameController>().playerHitMirror = false;
     }
 
     private void ChangeDimension()
     {
         if (Globals.currentDimension == "Normal")
+        {
             Globals.currentDimension = "Reflection";
+
+            RenderSettings.skybox.SetFloat("_Exposure", -1);
+
+        }
         else
+        {
             Globals.currentDimension = "Normal";
+            //RenderSettings.skybox = gc.GetComponent<GameController>().skyboxNormal;
+
+            RenderSettings.skybox.SetFloat("_Exposure", 1);
+        }
+
+        
 
     }
 
